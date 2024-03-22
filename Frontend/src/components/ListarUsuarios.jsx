@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function ListarUsuarios() {
     const [data, setData] = useState([])
@@ -25,7 +27,13 @@ fetchData()
     },[])
 
     return (
-        <div>
+        <>
+        <Link to="/">
+        <div className=''>
+<button className='bg-blue-400 rounded p-2'>Ir a registrar</button>
+        </div>
+        </Link>
+            <div>
             {data.map((dato, index) => (
                 <div key={index}>
                     <p>Identificación: {dato.identificacion}</p>
@@ -37,6 +45,7 @@ fetchData()
                 </div>
             ))}
         </div>
+        </>
     )
 }
 

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function RegistrarUsuarios() {
   const identificacion = useRef('');
@@ -37,6 +39,11 @@ function RegistrarUsuarios() {
 
   return (
     <div className="container mx-auto">
+         <Link to="/listar">
+        <div className=''>
+<button className='bg-blue-400 rounded p-2'>Ir a Listar</button>
+        </div>
+        </Link>
       <form className="max-w-sm mx-auto mt-8">
         <label className="block mb-2">
           Identificación:
